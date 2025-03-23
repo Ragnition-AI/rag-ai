@@ -1,0 +1,8 @@
+python-dotenv
+docling
+langchain
+langgraph
+langchain_community
+langchain_google_genai
+langchain_together
+chromadb
