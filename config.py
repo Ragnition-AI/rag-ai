@@ -19,3 +19,7 @@ class Config(object):
     TAVILY_API_KEY = getenv('TAVILY_API_KEY')
 
     TOKENIZERS_PARALLELISM = getenv('TOKENIZERS_PARALLELISM', 'true')
+
+    DATABASE_URL = getenv('DATABASE_URL', None)
+    if not DATABASE_URL:
+        exit()
