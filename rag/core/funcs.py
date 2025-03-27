@@ -166,12 +166,12 @@ def web_search(state):
         if last_human_messages:
             # Use LLM to create a better search query based on conversation context
             search_context = "\n".join([msg["content"] for msg in last_human_messages])
-            search_query_prompt = f"Based on this conversation context:\n{search_context}\n\nAnd this latest question:\n{question}\n\nFormulate the best search query to find relevant information:"
+            search_query_prompt = f"Based on this conversation context:\n{search_context}\n\nAnd this latest question:\n{question}\n\nFormulate the best search query to find relevant information. Give only the query (must):"
             search_query_result = llm.core_llm.invoke([HumanMessage(content=search_query_prompt)])
             search_query = search_query_result.content
 
     docs = web_search_tool.invoke({"query": search_query})
-    web_results = "\n".join([d["content"] for d in docs])
+    web_results = "\n".join([d["content"] for d in docs['results']])
     web_results = Document(page_content=web_results)
     documents.append(web_results)
     return {"documents": documents}

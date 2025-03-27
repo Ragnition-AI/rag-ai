@@ -30,4 +30,15 @@ class ChromaDB:
         result = self.vectordb.similarity_search(query, 3)
         return result
 
+    def list_documents(self):
+        results = self.vectordb.get(include=['metadatas'])
+    
+        unique_filenames = set()
+        for metadata in results['metadatas']:
+            filename = metadata.get('source') or metadata.get('filename')
+            if filename:
+                unique_filenames.add(filename)
+        
+        return list(unique_filenames)
+
 db = ChromaDB()

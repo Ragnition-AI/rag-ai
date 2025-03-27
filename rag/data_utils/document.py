@@ -8,7 +8,7 @@ from docling.document_converter import DocumentConverter, PdfFormatOption
 from docling.datamodel.pipeline_options import PdfPipelineOptions, TableFormerMode, AcceleratorOptions, AcceleratorDevice
 from langchain_core.documents import Document
 
-from ..core.utils import get_all_files
+from rag.utils import get_all_files
 from config import Config
 
 IMAGE_RESOLUTION_SCALE = 2.0
@@ -108,7 +108,7 @@ class DocumentHandler:
                     enriched_text,
                     metadata = {
                         "filename": chunk.meta.origin.filename,
-                        "title": chunk.meta.headings[0] if chunk.meta.headings else None
+                        "title": chunk.meta.headings[0] if chunk.meta.headings else 'Undefined'
                     }
                 )
                 doc_chunks.append(doc)
