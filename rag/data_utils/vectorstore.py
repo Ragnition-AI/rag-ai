@@ -27,7 +27,7 @@ class ChromaDB:
         self.vectordb.add_documents(documents=documents)
 
     def search(self, query:str):
-        result = self.vectordb.similarity_search(query, 3)
+        result = self.vectordb.similarity_search(query, 4)
         return result
 
     def list_documents(self):

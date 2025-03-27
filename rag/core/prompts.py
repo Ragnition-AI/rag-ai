@@ -16,6 +16,7 @@ Now, review the user question:
 {question}
 
 Provide an answer to this questions using only the above context. 
+After providing answer, ask if the user needs more help.
 
 Here is the previos chat history:
 {chat_history}

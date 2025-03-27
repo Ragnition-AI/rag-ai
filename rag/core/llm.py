@@ -12,17 +12,17 @@ class LLM:
         if mode == 'local':
             self.core_llm = ChatOllama(
                 model=self.local_model, 
-                temperature=0
+                temperature=0.3
             )
             self.json_llm = ChatOllama(
                 model=self.local_model, 
-                temperature=0, 
+                temperature=0.3, 
                 format="json"
             )
         elif mode == 'cloud':
             self.core_llm = ChatGoogleGenerativeAI(
                 model='gemini-2.0-flash',
-                temperature=0
+                temperature=0.3
             )
             # ChatTogether is bugged and is not working on latest (3.xx somthing)
             # Currently using refs/pr for package fix (someguy)
