@@ -3,7 +3,7 @@
 Retrieval-Augmented Generation (RAG) agent using Python, designed to enhance language model responses by retrieving and incorporating relevant contextual information from a dataset.
 
 ## Prerequisites
-- Python 3.10 or higher
+- Python 3.12 or higher
 - Virtual environment recommended
 
 ## Setup Instructions
